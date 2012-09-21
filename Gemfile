@@ -14,3 +14,6 @@ gem 'jquery-rails'
 gem 'activeadmin'
 gem 'grape'
 gem 'capistrano'
+gem 'carrierwave'
+gem 'rmagick'
+gem "just-datetime-picker"

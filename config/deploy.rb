@@ -24,6 +24,7 @@ after "deploy", "deploy:cleanup"
 
 namespace :deploy do
   task :restart, roles: :app do
+    bundle exec rake RAILS_ENV=production assets:precompile
     run "touch #{current_path}/tmp/restart.txt"
   end
 end

@@ -15,5 +15,5 @@ gem 'activeadmin'
 gem 'grape'
 gem 'capistrano'
 gem 'carrierwave'
-gem 'rmagick'
+gem 'mini_magick'
 gem "just-datetime-picker"

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  image: MyString
+  link: MyString
+  description: MyString
+  price: 9.99
+  valid_until: 2012-09-21 14:17:47
+  fb_share_text: MyString
+  twitter_share_text: MyString
+  email_share_text: MyString
+
+two:
+  title: MyString
+  image: MyString
+  link: MyString
+  description: MyString
+  price: 9.99
+  valid_until: 2012-09-21 14:17:47
+  fb_share_text: MyString
+  twitter_share_text: MyString
+  email_share_text: MyString

@@ -1,4 +1,4 @@
-server "92.51.171.57", :web, :app, :db, primary: true
+server "92.51.171.57:2222", :web, :app, :db, primary: true
 
 set :application, "appmanya"
 set :user, "rubydeployer"

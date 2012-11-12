@@ -1,6 +1,6 @@
 module Entities
   class App  < Grape::Entity
-    expose :title, :link, :description, :price
+    expose :title, :link, :description, :price, :full_description
     expose :valid_until, :fb_share_text, :twitter_share_text, :email_share_text
     expose(:image) {|app,options| "http://admin.appmanya.com" + app.image.to_s }
   end

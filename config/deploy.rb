@@ -7,7 +7,7 @@ set :user, "rubydeployer"
 set :deploy_to, "/usr/local/www/sites/admin.appmanya.com"
 set :deploy_via, :copy
 set :scm, :git
-set :repository,  "git@github.com:apetrov88/AppMania_Server.git"
+set :repository,  "git@github.com:Namotto/AppMania_Server.git"
 set :branch, "master"
 set :use_sudo, false
 set :bundle_gemfile,  "Gemfile"

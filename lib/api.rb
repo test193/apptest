@@ -1,4 +1,7 @@
+
+
 module Entities
+  #require 'grape'
   class App  < Grape::Entity
     expose :title, :link, :description, :price, :full_description
     expose :valid_until, :fb_share_text, :twitter_share_text, :email_share_text

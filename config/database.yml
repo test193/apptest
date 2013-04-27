@@ -12,10 +12,10 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: appmania_development
+  database: test
   pool: 5
-  username: root
-  password:
+  username: mysqladmin
+  password: Password1
   socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -25,20 +25,20 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: appmania_test
+  database: test
   pool: 5
-  username: root
-  password:
+  username: mysqladmin
+  password: Password1
   socket: /tmp/mysql.sock
 
 production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: appmanya
+  database: test
   host: 127.0.0.1
   port: 3306
   pool: 5
-  username: appmanya
-  password: appmanya
+  username: mysqladmin
+  password: Password1
   socket: /tmp/mysql.sock

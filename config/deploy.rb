@@ -1,30 +1,34 @@
 require "bundler/capistrano"
+server "91.208.99.12", :web, :app, :db, primary: true
 
-server "92.51.171.57:2222", :web, :app, :db, primary: true
 
-set :application, "appmanya"
-set :user, "rubydeployer"
-set :deploy_to, "/usr/local/www/sites/admin.appmanya.com"
+set :application, "appoffer"
+set :repository,  "git@github.com:test192/apptest.git"
+
+# set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
+# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
+
 set :deploy_via, :copy
 set :scm, :git
-set :repository,  "git@github.com:Namotto/AppMania_Server.git"
 set :branch, "master"
 set :use_sudo, false
 set :bundle_gemfile,  "Gemfile"
 set :bundle_dir,      File.join(fetch(:shared_path), 'bundle')
 set :bundle_flags,    "--deployment --quiet"
 set :bundle_without,  [:development, :test]
-set :bundle_cmd,      "bundle" 
-set :bundle_roles,    {:except => {:no_release => true}} 
+set :bundle_cmd,      "bundle"
+set :bundle_roles,    {:except => {:no_release => true}}
+# if you want to clean up old releases on each deploy uncomment this:
+# after "deploy:restart", "deploy:cleanup"
 
-default_run_options[:pty]   = true
-ssh_options[:forward_agent] = true
+# if you're still using the script/reaper helper you will need
+# these http://github.com/rails/irs_process_scripts
 
-after "deploy", "deploy:cleanup"
-
-namespace :deploy do
-  task :restart, roles: :app do
-    run "cd #{current_path} && bundle exec rake RAILS_ENV=production assets:precompile"
-    run "touch #{current_path}/tmp/restart.txt"
-  end
-end
+# If you are using Passenger mod_rails uncomment this:
+# namespace :deploy do
+#   task :start do ; end
+#   task :stop do ; end
+#   task :restart, :roles => :app, :except => { :no_release => true } do
+#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+#   end
+# end
